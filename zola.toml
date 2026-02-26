@@ -1,0 +1,34 @@
+# The URL the site will be built for
+base_url = "https://thanhnc.id.vn"
+
+title = "JakeClark - Nguyễn Chí Thành"
+default_language = "vi"
+theme = "tabi"
+
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+
+taxonomies = [{ name = "tags", feed = true }]
+
+[languages.en]
+title = "JakeClark - Nguyễn Chí Thành"
+taxonomies = [{ name = "tags", feed = true }]
+build_search_index = false
+generate_feeds = true
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+skin = "mint"
+theme_switcher = true
+default_theme = ""
+browser_theme_color = "#087e96"
+compact_tags = true
+socials = []
+menu = [
+    { name = "projects", url = "projects" },
+    { name = "faq", url = "faq" },
+    { name = "blog", url = "https://blog.thanhnc.id.vn" },
+]
