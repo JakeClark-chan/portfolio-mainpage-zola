@@ -6,7 +6,7 @@ description = "Hồ sơ của JakeClark về Linux, CTF, và bầu trời AI."
 # Hé lô, tui là JakeClark 😎
 Tên cha sinh mẹ đẻ: Nguyễn Chí Thành
 
-- Hiện đang cày cuốc năm 3 ngành An toàn Thông tin ở Đại học Công nghệ Thông tin, ĐHQG-HCM (UIT).
+- Hiện đang cày cuốc năm 4 ngành An toàn Thông tin ở Đại học Công nghệ Thông tin, ĐHQG-HCM (UIT).
 - Gần đây tui đang thích vọc vạch ứng dụng Trí tuệ Nhân tạo (AI) vô đủ thứ trên đời, đỉnh nhất là dùng AI để tự động hoá mấy quy trình bảo mật với quản trị mạng cho nó mướt.
 - Tui có đam mê mãnh liệt mổ xẻ mấy cái issue khó nhằn hiện nay, nhất là mấy lổ hổng ATTT, và mượn "tay" sức mạnh dời non lấp bể của AI để vả lại tụi nó.
 - Châm ngôn sống: Khai phá maximum tiềm năng bản thân trong lĩnh vực ATTT, AI và xa hơn nữa để không bao giờ bị đuối trong cái thế giới công nghệ nhảy trend từng giây.
@@ -20,7 +20,7 @@ Tên cha sinh mẹ đẻ: Nguyễn Chí Thành
 
 **Bảo mật (Cybersecurity)**
 - CTF: Xỉa mỏ vô đủ từ chiến trường PicoCTF, RootMe, đến TryHackMe.
-- Web Security: Đã đục bể 33% khoá học của PortSwigger Web Security Academy.
+- Web Security: Đã đục bể 34% khoá học của PortSwigger Web Security Academy.
 - Systems: Cầm trịch hệ thống Linux và Windows, lúc nào cũng rào chắn security kỹ càng.
 - Tools: Tay to với con dao bầu rựa Kali Linux và mấy bảo bối như Burp Suite, ZAP, nmap.
 - Solutions: Biết xài đồ chơi xịn như NGFW, EDR, SIEM (ELK Stack, Splunk), và IDS/IPS (Snort).
@@ -44,10 +44,6 @@ Tui (JakeClark) chụp ké với anh Luân siêu ngầu [@duyluandethuong](https
 Tui đi tham gia Lễ bế mạc UIT Data Science Challenge (DSC) nè.
 
 ---
-
-## 📂 Chuyên mục trên Blog
-- **[Linux](https://blog.thanhnc.id.vn/linux/)** — Hướng dẫn và chia sẻ kinh nghiệm dùng Linux.
-- **[CTF](https://blog.thanhnc.id.vn/ctf/)** — Write-ups và lời giải các bài CTF tui từng chơi.
 
 ## 🚀 Thông tin cá nhân
 - **[Projects](https://thanhnc.id.vn/projects/)** — Mấy cái project tui code dạo.
