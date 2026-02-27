@@ -6,7 +6,7 @@ description = "Personal portfolio of JakeClark about Linux, CTF, and AI."
 # Hello, I'm JakeClark
 Real name: Nguyễn Chí Thành
 
-- Third-year Information Security Student at University of Information Technology, VNU-HCM.
+- Forth-year Information Security Student at University of Information Technology, VNU-HCM.
 - Researching the application of artificial intelligence (AI) in everything, including automation for security and management processes.
 - Passionate about understanding the various issues currently faced, especially information security, and using the power of AI to overcome them.
 - Aspires to unlock personal potential in information security, AI, and beyond to keep up with technological trends.
@@ -44,10 +44,6 @@ Me, JakeClark, with YouTuber [@duyluandethuong](https://www.youtube.com/@duyluan
 Me inside the UIT Data Science Challenge (DSC) closing ceremony.
 
 ---
-
-## 📂 Blog Categories
-- **[Linux](https://blog.thanhnc.id.vn/en/linux/)** — Linux guides and experiences
-- **[CTF](https://blog.thanhnc.id.vn/en/ctf/)** — CTF write-ups and solutions
 
 ## 🚀 Personal Info
 - **[Projects](https://thanhnc.id.vn/en/projects/)** — My coding and research projects
