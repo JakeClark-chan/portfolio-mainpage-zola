@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Branch-based base_url configuration
 PROD_URL="https://thanhnc.id.vn"
-DEV_URL="https://dev-thanhnc-mainpage.jakeclark38b.workers.dev"
+DEV_URL="https://dev-portfolio-mainpage-zola.jakeclark38b.workers.dev"
 
 main() {
     ZOLA_VERSION=0.22.1
