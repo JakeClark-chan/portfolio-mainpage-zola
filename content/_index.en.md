@@ -52,7 +52,3 @@ Me inside the UIT Data Science Challenge (DSC) closing ceremony.
 ## 🚀 Personal Info
 - **[Projects](https://thanhnc.id.vn/en/projects/)** — My coding and research projects
 - **[FAQ](https://thanhnc.id.vn/en/faq/)** — Frequently Asked Questions
-
-## 📞 Contact
-- **Email**: [contact@thanhnc.id.vn](mailto:contact@thanhnc.id.vn)
-- **GitHub**: [https://github.com/JakeClark-chan](https://github.com/JakeClark-chan)

@@ -52,7 +52,3 @@ Tui đi tham gia Lễ bế mạc UIT Data Science Challenge (DSC) nè.
 ## 🚀 Thông tin cá nhân
 - **[Projects](https://thanhnc.id.vn/projects/)** — Mấy cái project tui code dạo.
 - **[FAQ](https://thanhnc.id.vn/faq/)** — Hỏi xoáy đáp xoay về tui.
-
-## 📞 Thông tin liên hệ
-- **Email**: [contact@thanhnc.id.vn](mailto:contact@thanhnc.id.vn)
-- **GitHub**: [https://github.com/JakeClark-chan](https://github.com/JakeClark-chan)

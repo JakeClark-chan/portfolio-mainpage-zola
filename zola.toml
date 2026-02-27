@@ -26,8 +26,20 @@ theme_switcher = true
 default_theme = ""
 browser_theme_color = "#087e96"
 compact_tags = true
-socials = []
+favicon_emoji = "🛠️"
+socials = [
+    { name = "email", url = "mailto:nguyenchithanh210904@gmail.com", icon = "email" },
+    { name = "github", url = "https://github.com/JakeClark-chan", icon = "github" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/ngchithanh", icon = "linkedin" },
+    { name = "facebook", url = "https://facebook.com/nguyenchithanh21", icon = "facebook" },
+    { name = "telegram", url = "https://t.me/jakeclark38a", icon = "telegram" },
+]
 menu = [
+    { name = "projects", url = "projects" },
+    { name = "faq", url = "faq" },
+    { name = "blog", url = "https://blog.thanhnc.id.vn" },
+]
+footer_menu = [
     { name = "projects", url = "projects" },
     { name = "faq", url = "faq" },
     { name = "blog", url = "https://blog.thanhnc.id.vn" },
