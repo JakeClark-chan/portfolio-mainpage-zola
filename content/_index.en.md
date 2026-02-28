@@ -1,9 +1,11 @@
 +++
 title = "Home"
 description = "Personal portfolio of JakeClark about Linux, CTF, and AI."
+
+[extra]
+header = {title = "Hello, I'm JakeClark", img = "kanade-icon.jpg", img_alt = "JakeClark", description = "Aspiring AI & Security Engineer | Building Secure AI Agents & Automations | UIT"}
 +++
 
-# Hello, I'm JakeClark
 Real name: Nguyễn Chí Thành
 
 - Forth-year Information Security Student at University of Information Technology, VNU-HCM.

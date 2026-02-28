@@ -22,6 +22,7 @@ theme = "catppuccin-mocha"
 
 [extra]
 skin = "mint"
+stylesheets = ["custom.css"]
 theme_switcher = true
 default_theme = ""
 browser_theme_color = "#087e96"

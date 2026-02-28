@@ -1,0 +1,12 @@
+// Fix: align banner image to the top instead of vertically centered.
+// tabi's default `margin: auto 0` on #image-container-home causes the image
+// to drift to the bottom when the text column is tall.
+#image-container-home {
+    margin: 0 !important;
+    align-self: flex-start;
+}
+
+// Make the banner profile image circular.
+#banner-home-img {
+    border-radius: 50%;
+}
