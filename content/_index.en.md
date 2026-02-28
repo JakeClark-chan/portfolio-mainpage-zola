@@ -37,10 +37,10 @@ Real name: Nguyễn Chí Thành
 
 ## Some pictures about me
 
-![Me with Duy Luan](jakeclark-with-duy-luan-720p.jpg)
+{{ optimized_img(src="jakeclark-with-duy-luan-720p.jpg", alt="Me with Duy Luan") }}
 Me, JakeClark, with YouTuber [@duyluandethuong](https://www.youtube.com/@duyluandethuong)
 
-![UIT DSC](DSC_073.jpg)
+{{ optimized_img(src="DSC_073.jpg", alt="UIT DSC") }}
 Me inside the UIT Data Science Challenge (DSC) closing ceremony.
 
 ---

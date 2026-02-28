@@ -37,10 +37,10 @@ Tên cha sinh mẹ đẻ: Nguyễn Chí Thành
 
 ## Góc Flexing bản thân 📸
 
-![Me with Duy Luan](jakeclark-with-duy-luan-720p.jpg)
+{{ optimized_img(src="jakeclark-with-duy-luan-720p.jpg", alt="Me with Duy Luan") }}
 Tui (JakeClark) chụp ké với anh Luân siêu ngầu [@duyluandethuong](https://www.youtube.com/@duyluandethuong)
 
-![UIT DSC](DSC_073.jpg)
+{{ optimized_img(src="DSC_073.jpg", alt="UIT DSC") }}
 Tui đi tham gia Lễ bế mạc UIT Data Science Challenge (DSC) nè.
 
 ---

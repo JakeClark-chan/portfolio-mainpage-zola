@@ -1,0 +1,21 @@
+{%- set colocated_path = page.colocated_path | default(value="") -%}
+{%- set img_path = colocated_path ~ src -%}
+
+{#- Generate multiple formats at 800px width -#}
+{%- set avif = resize_image(path=img_path, width=800, height=0, op="fit_width", format="avif", quality=75) -%}
+{%- set webp = resize_image(path=img_path, width=800, height=0, op="fit_width", format="webp", quality=85) -%}
+{%- set jpg  = resize_image(path=img_path, width=800, height=0, op="fit_width", format="jpg",  quality=90) -%}
+
+<picture>
+  <source srcset="{{ avif.url }}" type="image/avif">
+  <source srcset="{{ webp.url }}" type="image/webp">
+  <img 
+    src="{{ jpg.url }}" 
+    {% if alt %}alt="{{ alt }}"{% endif %} 
+    width="{{ jpg.width }}" 
+    height="{{ jpg.height }}" 
+    loading="lazy" 
+    decoding="async"
+    style="max-width: 100%; height: auto; display: block;"
+  >
+</picture>
