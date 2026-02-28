@@ -32,4 +32,7 @@ A: Câu hỏi này hơi nhạy cảm, nhưng tui sẽ trả lời thật lòng. 
 **Q: Sau khi đi làm bục mặt thì sốp có muốn khởi nghiệp/mở lab/làm gì khác không?**
 A: Tui có định là sẽ mở một công ty khởi nghiệp nhỏ về Security và AI, nhưng mà tui hổng có ý tưởng gì hết trơn á. Nếu có ai đó có ý tưởng hay ho thì cứ mạnh dạn liên hệ với tui nhé. 
 
-**Note: Ngoài những câu trên thì tui sẽ mở một mục bên Blog kể đời tư bên ngoài của tui như là chuyện đi chơi, bạn bè,... tên là IRL, mong mọi người ủng hộ nhé. Bởi vì liệt kê hết 1001 câu hỏi ở đây nó dài quá đấy. Các bạn hoàn toàn có thể đóng góp bằng cách comment vào các bài blog (đương nhiên là phải có tài khoản GitHub để tránh spam thôi). Vì tui dễ bịa chuyện bằng cách gõ hơn nên tui sẽ không hay kể rồi đăng lên TikTok hay YouTube đâu nha. Cảm ơn mọi người đã đọc.**
+---
+# Note
+
+Ngoài những câu trên thì tui sẽ mở một mục bên Blog kể đời tư bên ngoài của tui như là chuyện đi chơi, bạn bè,... tên là IRL, mong mọi người ủng hộ nhé. Bởi vì liệt kê hết 1001 câu hỏi ở đây nó dài quá đấy. Các bạn hoàn toàn có thể đóng góp bằng cách comment vào các bài blog (đương nhiên là phải có tài khoản GitHub để tránh spam thôi). Vì tui dễ bịa chuyện bằng cách gõ hơn nên tui sẽ không hay kể rồi đăng lên TikTok hay YouTube đâu nha. Cảm ơn mọi người đã đọc.
