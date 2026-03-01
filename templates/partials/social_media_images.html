@@ -4,27 +4,27 @@
 {%- set og_base = config.extra.og_image_url | default(value="https://og.thanhnc.id.vn") -%}
 
 {%- if page -%}
-{%- set og_title = page.title | default(value=config.title) | urlencode -%}
-{%- set og_description = page.description | default(value="") | urlencode -%}
-{%- set og_date = page.date | default(value="") -%}
+{%- set og_title = page.title | default(value=config.title) | base64_encode | urlencode -%}
+{%- set og_description = page.description | default(value="") | base64_encode | urlencode -%}
+{%- set og_date = page.date | default(value="") | base64_encode | urlencode -%}
 {%- if page.taxonomies.tags -%}
-{%- set og_tags = page.taxonomies.tags | join(sep=",") | urlencode -%}
+{%- set og_tags = page.taxonomies.tags | join(sep=",") | base64_encode | urlencode -%}
 {%- else -%}
-{%- set og_tags = "" -%}
+{%- set og_tags = "" | base64_encode | urlencode -%}
 {%- endif -%}
 {%- elif section -%}
-{%- set og_title = section.title | default(value=config.title) | urlencode -%}
-{%- set og_description = section.description | default(value="") | urlencode -%}
-{%- set og_date = "" -%}
-{%- set og_tags = "" -%}
+{%- set og_title = section.title | default(value=config.title) | base64_encode | urlencode -%}
+{%- set og_description = section.description | default(value="") | base64_encode | urlencode -%}
+{%- set og_date = "" | base64_encode | urlencode -%}
+{%- set og_tags = "" | base64_encode | urlencode -%}
 {%- else -%}
-{%- set og_title = config.title | urlencode -%}
-{%- set og_description = config.description | default(value="") | urlencode -%}
-{%- set og_date = "" -%}
-{%- set og_tags = "" -%}
+{%- set og_title = config.title | base64_encode | urlencode -%}
+{%- set og_description = config.description | default(value="") | base64_encode | urlencode -%}
+{%- set og_date = "" | base64_encode | urlencode -%}
+{%- set og_tags = "" | base64_encode | urlencode -%}
 {%- endif -%}
 
-{%- set og_author = "JakeClark" -%}
+{%- set og_author = "JakeClark" | base64_encode | urlencode -%}
 
 {#- Build the OG image URL -#}
 {%- set og_url = og_base ~ "/og?title=" ~ og_title ~ "&description=" ~ og_description ~ "&author=" ~ og_author ~
