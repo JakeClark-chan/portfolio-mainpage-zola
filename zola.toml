@@ -44,14 +44,12 @@ socials = [
 ]
 menu = [
     { name = "projects", url = "projects" },
-    { name = "linux", url = "linux" },
-    { name = "ctf", url = "ctf" },
+    { name = "blog", url = "blog" },
     { name = "faq", url = "faq" },
 ]
 footer_menu = [
     { name = "projects", url = "projects" },
-    { name = "linux", url = "linux" },
-    { name = "ctf", url = "ctf" },
+    { name = "blog", url = "blog" },
     { name = "faq", url = "faq" },
 ]
 

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="vi" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com giscus.app;connect-src 'self';script-src 'self'  giscus.app 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://thanhnc.id.vn">
+
+    
+    <title>
+JakeClark - Nguyễn Chí Thành • CTF</title>
+
+    
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50%" x="50%" dominant-baseline="central" text-anchor="middle" font-size="88">🛠️</text></svg>'>
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="JakeClark - Nguyễn Chí Thành - Atom Feed" href="https://thanhnc.id.vn/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://thanhnc.id.vn/custom_subset.css?h=ffa90bf9a2649dfbcdbd">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://thanhnc.id.vn/main.css?h=045c365e19a4d50a64bb" />
+        <link rel="stylesheet" href="https://thanhnc.id.vn/custom.css?h=9577bdcdedcc69cae84c" />
+        <link rel="stylesheet" href="https://thanhnc.id.vn/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="Write-ups và hướng dẫn giải CTF (Capture The Flag)" />
+        <meta property="og:description" content="Write-ups và hướng dẫn giải CTF (Capture The Flag)" />
+
+    
+
+    <meta property="og:title" content="JakeClark - Nguyễn Chí Thành" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="vi_VN" />
+
+        <link rel="alternate" hreflang="vi" href="https://thanhnc.id.vn/blog/ctf/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;page&#x2F;2&#x2F;" /><meta property="og:site_name" content="JakeClark - Nguyễn Chí Thành">
+        <noscript><link rel="stylesheet" href="https://thanhnc.id.vn/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://thanhnc.id.vn/js/initializeTheme.min.js"></script>
+        <script defer src="https://thanhnc.id.vn/js/themeSwitcher.min.js"></script>
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Bỏ qua đến nội dung</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://thanhnc.id.vn/">JakeClark - Nguyễn Chí Thành</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://thanhnc.id.vn/projects/">dự án
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://thanhnc.id.vn/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://thanhnc.id.vn/faq/">faq
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="Chọn ngôn ngữ" aria-label="Chọn ngôn ngữ"><div class="language-switcher-icon"></div></summary>
+        <div class="dropdown-content" role="menu">Tiếng Việt<a role="menuitem" lang="en" aria-label="English" href="https:&#x2F;&#x2F;thanhnc.id.vn/en/blog/ctf/page/2/">English</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Chuyển sang chế độ tối&#x2F;sáng"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Chuyển sang chế độ tối"
+        aria-pressed="false">
+    </div><div
+        title="Đặt lại chế độ mặc định"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Đặt lại chế độ mặc định">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+<main >
+
+
+
+<div class="h-card hidden">
+  <div><span class="p-name" rel="me"></span>
+
+    
+  </div>
+
+  
+
+  
+  <div><span>
+      <a class="u-url u-id" href="https:&#x2F;&#x2F;thanhnc.id.vn">homepage</a>
+    </span> -
+      
+      <span>
+        <a class="p-url" rel="me" href="mailto:contact@thanhnc.id.vn">email</a>
+      </span> -
+      
+      <span>
+        <a class="p-url" rel="me" href="https://github.com/JakeClark-chan">github</a>
+      </span> -
+      
+      <span>
+        <a class="p-url" rel="me" href="https://www.linkedin.com/in/ngchithanh">linkedin</a>
+      </span> -
+      
+      <span>
+        <a class="p-url" rel="me" href="https://facebook.com/nguyenchithanh21">facebook</a>
+      </span> -
+      
+      <span>
+        <a class="p-url" rel="me" href="https://t.me/jakeclark38a">telegram</a>
+      </span> -
+      
+    
+  </div>
+
+  
+  
+  
+    
+  
+    
+  
+  
+
+  </div>
+
+
+<div id="posts-list">
+        <div>
+            
+
+<h1 class="title-container section-title bottom-divider">
+    CTF
+</h1>
+
+
+        </div>
+
+        
+        
+
+    
+
+
+<div class="bloglist-container">
+    
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">10 Thg 9 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;sol-pico-web&#x2F;">PicoCTF: Web App Solutions</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/picoctf/">picoctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/web/">web</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/cookies/">cookies</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/wasm/">wasm</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/js-deobfuscation/">js-deobfuscation</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Tổng hợp lời giải các bài tập Web Security trên PicoCTF, từ Cookies, Header (GET aHEAD) đến WebAssembly (Some Assembly Required).</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;sol-pico-web&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">30 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;lab-pico-challenge&#x2F;">School Lab: PicoCTF Android Challenges</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/picoctf/">picoctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/android/">android</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/mobile-security/">mobile-security</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/frida/">frida</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/smali/">smali</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/reverse-engineering/">reverse-engineering</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Write-up giải các thử thách Android trên PicoCTF (one.apk đến five.apk), áp dụng kiến thức về Logcat, Frida Hooking và Smali Patching.</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;lab-pico-challenge&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">25 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;lab-evabs-v5&#x2F;">School Lab: EVABSv5 Android Challenge</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/android/">android</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/mobile-security/">mobile-security</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/frida/">frida</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/smali/">smali</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/adb/">adb</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Write-up chi tiết giải 12 levels của EVABSv5 — một lab thực hành bảo mật ứng dụng Android, từ Logcat, Shared Preferences đến Smali Injection và Frida Hooking.</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;lab-evabs-v5&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">22 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-format-string&#x2F;">Pwn - Format String</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/pwn/">pwn</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/format-string/">format-string</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ida/">ida</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/linux-security/">linux-security</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Giải bài thực hành Format String cơ bản — kỹ thuật leak flag từ stack sử dụng hàm printf.</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-format-string&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">21 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-cryptohack-curves&#x2F;">CryptoHack - Elliptic Curves</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/cryptohack/">cryptohack</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/crypto/">crypto</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/elliptic-curves/">elliptic-curves</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ecc/">ecc</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/sage/">sage</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Series giải các bài tập về Elliptic Curves trên CryptoHack, từ cơ bản đến nâng cao (Pohlig-Hellman, Baby-step Giant-step).</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-cryptohack-curves&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">18 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-re-basic&#x2F;">Reverse Engineering - Basic Problems</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/re/">re</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/reverse-engineering/">reverse-engineering</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/crackme/">crackme</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/cpp/">cpp</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ida/">ida</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Series giải các bài tập Reverse Engineering cơ bản, tập trung vào việc viết script dịch ngược (solve script) từ mã giả (pseudo-code) của IDA.</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-re-basic&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">18 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-stack-bof&#x2F;">Pwn - Stack Buffer Overflow</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/pwn/">pwn</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/buffer-overflow/">buffer-overflow</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/stack/">stack</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/gdb/">gdb</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/pie/">pie</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/linux-security/">linux-security</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Hướng dẫn chi tiết về khai thác lỗi Stack Buffer Overflow trên Linux x64, bao gồm phân tích checksec, gdb và vượt qua PIE bằng cách ghi đè từng phần (partial overwrite).</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-stack-bof&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta bottom-divider">
+                <ul><li class="date">14 Thg 8 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content bottom-divider">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-cryptohack-hash&#x2F;">CryptoHack - Hash Functions</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/cryptohack/">cryptohack</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/crypto/">crypto</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/hash/">hash</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/md5/">md5</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/length-extension/">length-extension</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/collison/">collison</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Giải các bài tập về hàm băm (Hash Functions) trên CryptoHack, bao gồm Jack's Birthday, MD5 collisions và Length Extension Attack.</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;ex-cryptohack-hash&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+            
+        
+    
+        
+            
+                
+            
+
+            <section class="bloglist-meta ">
+                <ul><li class="date">23 Thg 7 2023</li>
+
+                    
+                </ul>
+            </section>
+
+            <section class="bloglist-content ">
+                <div>
+                    
+
+                    <h2 class="bloglist-title">
+                        <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;lab-first-test&#x2F;">School Lab: First Test - Web App &amp; Forensics</a>
+                    </h2>
+
+                    
+                        <div class="bloglist-tags">
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/ctf/">ctf</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/web/">web</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/sql-injection/">sql-injection</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/forensics/">forensics</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/php/">php</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/command-injection/">command-injection</a>
+                            
+                                <a class="tag" href="https://thanhnc.id.vn/tags/timing-attack/">timing-attack</a>
+                            
+                        </div>
+                    
+
+                    <div class="description">
+                        
+                            <p>Write-up cho bài kiểm tra đầu tiên với các thử thách Web (Command Injection, Blind SQL Injection) và Forensics (Fixing PNG header).</p>
+                        
+                    </div>
+                    <a class="readmore" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;lab-first-test&#x2F;">Đọc thêm&nbsp;<span class="arrow">→</span></a>
+                </div>
+            </section>
+        
+        
+    
+</div>
+
+    </div>
+
+    
+    <ul class="pagination">
+        
+            <li class="page-item page-prev">
+                <a href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;ctf&#x2F;" class="page-link" aria-label="Trước"><span class="arrow">←</span> Trước</a>
+            </li>
+        
+
+        <li class="page-item page-numbers">
+            2 &#x2F; 2
+        </li>
+
+        
+            <li class="page-item page-next">
+                <span class="page-link disabled" aria-disabled="true" aria-label="Tiếp (disabled)">Tiếp <span class="arrow">→</span></span>
+            </li>
+        
+    </ul>
+
+
+</main>
+
+    <div id="button-container">
+        
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Lên đầu trang">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Đã chép!
+    </span>
+    <span id="copy-init" class="hidden">
+        Sao chép code
+    </span>
+    <script defer src="https://thanhnc.id.vn/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://thanhnc.id.vn/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://thanhnc.id.vn/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="mailto:contact@thanhnc.id.vn">
+                                    <img loading="lazy" alt="email" title="email" src="https://thanhnc.id.vn/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://github.com/JakeClark-chan">
+                                    <img loading="lazy" alt="github" title="github" src="https://thanhnc.id.vn/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://www.linkedin.com/in/ngchithanh">
+                                    <img loading="lazy" alt="linkedin" title="linkedin" src="https://thanhnc.id.vn/social_icons/linkedin.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://facebook.com/nguyenchithanh21">
+                                    <img loading="lazy" alt="facebook" title="facebook" src="https://thanhnc.id.vn/social_icons/facebook.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://t.me/jakeclark38a">
+                                    <img loading="lazy" alt="telegram" title="telegram" src="https://thanhnc.id.vn/social_icons/telegram.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;projects&#x2F;">
+                                dự án
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;">
+                                blog
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;faq&#x2F;">
+                                faq
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Được xây dựng bằng
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                </small>
+        </div>
+    </section>
+
+    </footer>
+
+
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="vi" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com giscus.app;connect-src 'self' vhiweeypifbwacashxjz.supabase.co;script-src 'self'  giscus.app  cdn.jsdelivr.net 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://thanhnc.id.vn">
+
+    
+    <title>
+JakeClark - Nguyễn Chí Thành • Cài đặt Elementary OS trên Ubuntu Server và thiết lập cá nhân</title>
+
+    
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50%" x="50%" dominant-baseline="central" text-anchor="middle" font-size="88">🛠️</text></svg>'>
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="JakeClark - Nguyễn Chí Thành - Atom Feed" href="https://thanhnc.id.vn/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://thanhnc.id.vn/custom_subset.css?h=ffa90bf9a2649dfbcdbd">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://thanhnc.id.vn/main.css?h=045c365e19a4d50a64bb" />
+        <link rel="stylesheet" href="https://thanhnc.id.vn/custom.css?h=9577bdcdedcc69cae84c" />
+        <link rel="stylesheet" href="https://thanhnc.id.vn/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="Hướng dẫn chi tiết cài đặt Elementary OS (Pantheon) trên Ubuntu Server 24.04, bao gồm cấu hình mạng, gesture, IBus tiếng Việt, driver Nvidia, Docker, Distrobox, và tối ưu pin." />
+        <meta property="og:description" content="Hướng dẫn chi tiết cài đặt Elementary OS (Pantheon) trên Ubuntu Server 24.04, bao gồm cấu hình mạng, gesture, IBus tiếng Việt, driver Nvidia, Docker, Distrobox, và tối ưu pin." />
+
+    
+
+    <meta property="og:title" content="Cài đặt Elementary OS trên Ubuntu Server và thiết lập cá nhân" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="vi_VN" />
+
+        <link rel="alternate" hreflang="vi" href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/" /><meta property="og:locale:alternate" content="en_GB" />
+
+        <link rel="alternate" hreflang="en" href="https://thanhnc.id.vn/en/blog/linux/elementary-os-ubuntu-setup/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;linux&#x2F;elementary-os-ubuntu-setup&#x2F;" /><meta property="og:site_name" content="JakeClark - Nguyễn Chí Thành">
+        <noscript><link rel="stylesheet" href="https://thanhnc.id.vn/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://thanhnc.id.vn/js/initializeTheme.min.js"></script>
+        <script defer src="https://thanhnc.id.vn/js/themeSwitcher.min.js"></script>
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Bỏ qua đến nội dung</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://thanhnc.id.vn/">JakeClark - Nguyễn Chí Thành</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://thanhnc.id.vn/projects/">dự án
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://thanhnc.id.vn/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://thanhnc.id.vn/faq/">faq
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="Chọn ngôn ngữ" aria-label="Chọn ngôn ngữ"><div class="language-switcher-icon"></div></summary>
+        <div class="dropdown-content" role="menu">Tiếng Việt<a role="menuitem" lang="en" aria-label="English" href="https:&#x2F;&#x2F;thanhnc.id.vn/en/blog/linux/elementary-os-ubuntu-setup/">English</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Chuyển sang chế độ tối&#x2F;sáng"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Chuyển sang chế độ tối"
+        aria-pressed="false">
+    </div><div
+        title="Đặt lại chế độ mặc định"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Đặt lại chế độ mặc định">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Cài đặt Elementary OS trên Ubuntu Server và thiết lập cá nhân
+        </h1>
+        <a class="u-url u-uid" href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;thanhnc.id.vn" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2025-01-20">20 Thg 1 2025</time></li><li title="382 từ"><span class='separator' aria-hidden='true'>•</span>2 phút đọc</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Thẻ:&nbsp;</li><li class="tag"><a class="p-category" href="https://thanhnc.id.vn/tags/linux/">linux</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://thanhnc.id.vn/tags/elementary-os/">elementary-os</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://thanhnc.id.vn/tags/ubuntu/">ubuntu</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://thanhnc.id.vn/tags/pantheon/">pantheon</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://thanhnc.id.vn/tags/docker/">docker</a></li>
+        </ul>
+            
+
+<div class="toc-container">
+    
+        <h3>Mục lục</h3>
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#1-truoc-khi-cai">1. Trước khi cài</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#2-cai-dat">2. Cài đặt</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#2-1-ubuntu-server">2.1. Ubuntu Server</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#2-2-elementary-os-ppa">2.2. Elementary OS PPA</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-sau-cai-dat-cai-dat-he-thong">3. Sau cài đặt — Cài đặt hệ thống</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-1-mang">3.1. Mạng</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-2-cu-chi-da-cham-multi-touch-gesture">3.2. Cử chỉ đa chạm (Multi-touch gesture)</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-3-tat-service-cho-mang">3.3. Tắt service chờ mạng</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-4-pantheon-tweak">3.4. Pantheon-tweak</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-5-ibus-va-go-tieng-viet">3.5. IBus và gõ tiếng Việt</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-6-driver-nvidia-tuy-chon">3.6. Driver Nvidia (tuỳ chọn)</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-sau-cai-dat-he-thong">4. Sau cài đặt — Hệ thống</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-1-toi-uu-ssd">4.1. Tối ưu SSD</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-2-tang-swapfile">4.2. Tăng swapfile</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-3-dong-bo-dong-ho-cho-dual-boot-windows">4.3. Đồng bộ đồng hồ cho dual-boot Windows</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-sau-cai-dat-ung-dung">5. Sau cài đặt — Ứng dụng</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-1-pacstall">5.1. Pacstall</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-2-python-virtualenv-uv-astral">5.2. Python virtualenv — uv (Astral)</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-3-oh-my-zsh">5.3. oh-my-zsh</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-4-docker-va-distrobox">5.4. Docker và Distrobox</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-5-toi-uu-pin-laptop">5.5. Tối ưu pin laptop</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+        
+            <p class="p-summary" hidden>Hướng dẫn chi tiết cài đặt Elementary OS (Pantheon) trên Ubuntu Server 24.04, bao gồm cấu hình mạng, gesture, IBus tiếng Việt, driver Nvidia, Docker, Distrobox, và tối ưu pin.</p><section class="e-content body"><p>Hướng dẫn chi tiết cài đặt <strong>Elementary OS</strong> (Pantheon desktop) trên <strong>Ubuntu Server 24.04</strong>, bao gồm cấu hình mạng, gesture, IBus tiếng Việt, driver Nvidia, Docker, Distrobox, và tối ưu pin laptop.</p>
+<span id="continue-reading"></span>
+<h2 id="1-truoc-khi-cai">1. Trước khi cài</h2>
+<ul>
+<li>Ubuntu Server 24.04 ISO</li>
+<li>Kết nối Internet ổn định</li>
+</ul>
+<h2 id="2-cai-dat">2. Cài đặt</h2>
+<h3 id="2-1-ubuntu-server">2.1. Ubuntu Server</h3>
+<ul>
+<li>Cài Ubuntu Server 24.04 Minimal version</li>
+<li>Làm theo hướng dẫn cài đặt</li>
+</ul>
+<h3 id="2-2-elementary-os-ppa">2.2. Elementary OS PPA</h3>
+<p>Sau khi boot vào terminal Ubuntu, chạy:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> add-apt-repository ppa:elementary-os/stable</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt update</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt install elementary-desktop</span></span></code></pre>
+<p>Vào LightDM:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> service lightdm restart</span></span></code></pre><h2 id="3-sau-cai-dat-cai-dat-he-thong">3. Sau cài đặt — Cài đặt hệ thống</h2>
+<h3 id="3-1-mang">3.1. Mạng</h3>
+<p>ElementaryOS (và các distro khác) dùng NetworkManager. Để netplan dùng NetworkManager:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> nano /etc/netplan/50-cloud-init.yaml</span></span></code></pre><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">network</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    ethernets</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> {}</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    version</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 2</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    renderer</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> NetworkManager</span><span style="color: #9399B2;font-style: italic;">  # ← Thêm dòng này</span></span></code></pre><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> netplan apply</span></span></code></pre><h3 id="3-2-cu-chi-da-cham-multi-touch-gesture">3.2. Cử chỉ đa chạm (Multi-touch gesture)</h3>
+<p>Mặc định Touchegg chưa được cài. Để cài:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> add-apt-repository ppa:touchegg/stable</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt install touchegg</span></span></code></pre>
+<p>Reboot, sau đó tuỳ chỉnh trong <strong>Settings → Mouse &amp; Touchpad → Gestures</strong>.</p>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image.png" alt="Thiết lập cử chỉ" /></p>
+<p>Cài thêm <strong>Touche</strong> từ AppCenter để tuỳ chỉnh gesture:</p>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image1.png" alt="Touche app" /></p>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image2.png" alt="Tuỳ chỉnh gesture" /></p>
+<h3 id="3-3-tat-service-cho-mang">3.3. Tắt service chờ mạng</h3>
+<p>Ubuntu Server có service chờ kết nối mạng trước khi khởi động desktop:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> systemctl disable systemd-networkd-wait-online.service</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> systemctl mask systemd-networkd-wait-online.service</span></span></code></pre><h3 id="3-4-pantheon-tweak">3.4. Pantheon-tweak</h3>
+<p>Cài pantheon-tweak từ Flatpak/AppCenter để tuỳ chỉnh font desktop:</p>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image3.png" alt="Pantheon Tweak" /></p>
+<h3 id="3-5-ibus-va-go-tieng-viet">3.5. IBus và gõ tiếng Việt</h3>
+<p>Elementary OS tích hợp IBus khá kém so với GNOME. Workaround:</p>
+<ol>
+<li>Cài engine yêu thích (mình chọn <strong>Bamboo</strong>):</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> add-apt-repository ppa:bamboo-engine/ibus-bamboo</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt install ibus-bamboo</span></span></code></pre>
+<ol start="2">
+<li>Vào <strong>Settings → Keyboard</strong>, đảm bảo chỉ có layout <strong>English (US)</strong>:</li>
+</ol>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image4.png" alt="Keyboard layout" /></p>
+<ol start="3">
+<li>Trong <strong>Input Method</strong>, thêm Bamboo và tuỳ chỉnh shortcut:</li>
+</ol>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image5.png" alt="Input method" /></p>
+<ol start="4">
+<li>Đảm bảo Keyboard Layout là <strong>English (US)</strong>:</li>
+</ol>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image6.png" alt="Keyboard layout check" /></p>
+<ol start="5">
+<li>Nhấn <strong>Alt + Space</strong> để chuyển bàn phím. Tuy nhiên, Wingpanel (Pantheon top panel) không hiển thị status indicator nên bạn không biết đang dùng input method nào 😞</li>
+</ol>
+<h3 id="3-6-driver-nvidia-tuy-chon">3.6. Driver Nvidia (tuỳ chọn)</h3>
+<p>Vào <strong>Settings → System → Driver</strong> để cài driver:</p>
+<p><img src="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/image7.png" alt="Nvidia driver" /></p>
+<h2 id="4-sau-cai-dat-he-thong">4. Sau cài đặt — Hệ thống</h2>
+<h3 id="4-1-toi-uu-ssd">4.1. Tối ưu SSD</h3>
+<p>TRIM hàng ngày, tạo zswap, giảm wear cho Firefox:</p>
+<p><a rel="external" href="https://easylinuxtipsproject.blogspot.com/p/ssd.html#ID6">https://easylinuxtipsproject.blogspot.com/p/ssd.html#ID6</a></p>
+<h3 id="4-2-tang-swapfile">4.2. Tăng swapfile</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> swapoff /swap.img</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> rm /swap.img</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> fallocate -l 8G /swap.img</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> chmod</span><span style="color: #FAB387;"> 600</span><span style="color: #A6E3A1;"> /swap.img</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> mkswap /swap.img</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> swapon /swap.img</span></span></code></pre><h3 id="4-3-dong-bo-dong-ho-cho-dual-boot-windows">4.3. Đồng bộ đồng hồ cho dual-boot Windows</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">timedatectl</span><span style="color: #A6E3A1;"> set-local-rtc</span><span style="color: #FAB387;"> 1</span></span></code></pre><h2 id="5-sau-cai-dat-ung-dung">5. Sau cài đặt — Ứng dụng</h2>
+<h3 id="5-1-pacstall">5.1. Pacstall</h3>
+<p>Pacstall là AUR cho Ubuntu:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> bash -c &quot;</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">curl</span><span style="color: #A6E3A1;"> -fsSL https://pacstall.dev/q/install</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">pacstall</span><span style="color: #A6E3A1;"> -I zen-browser-bin lm-studio-app osu-lazer-app fastfetch-git</span></span></code></pre><h3 id="5-2-python-virtualenv-uv-astral">5.2. Python virtualenv — uv (Astral)</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">curl</span><span style="color: #A6E3A1;"> -LsSf https://astral.sh/uv/install.sh</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> sh</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">uv</span><span style="color: #A6E3A1;"> venv</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">uv</span><span style="color: #A6E3A1;"> add</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">tên-packag</span><span>e</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;">...</span></span></code></pre><h3 id="5-3-oh-my-zsh">5.3. oh-my-zsh</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt install git zsh zsh-autosuggestions</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/zsh-users/zsh-autosuggestions</span><span style="color: #F5C2E7;"> \</span></span>
+<span class="giallo-l"><span>  ${ZSH_CUSTOM</span><span style="color: #94E2D5;">:-</span><span>~</span><span style="color: #94E2D5;">/</span><span>.oh-my-zsh</span><span style="color: #94E2D5;">/</span><span>custom}</span><span style="color: #A6E3A1;">/plugins/zsh-autosuggestions</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sh</span><span style="color: #A6E3A1;"> -c &quot;</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">curl</span><span style="color: #A6E3A1;"> -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">&quot;</span></span></code></pre>
+<p>Cấu hình <code>~/.zshrc</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span>ZSH_THEME</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;candy-kali&quot;</span></span>
+<span class="giallo-l"><span>ZSH_CUSTOM</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">~/.zsh-custom</span></span>
+<span class="giallo-l"><span>plugins</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">(</span><span style="color: #A6E3A1;">git zsh-autosuggestions vscode</span><span style="color: #9399B2;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">if</span><span style="color: #9399B2;"> [</span><span style="color: #94E2D5;"> -d</span><span style="color: #A6E3A1;"> &quot;</span><span>$HOME</span><span style="color: #A6E3A1;">/.local/bin&quot;</span><span style="color: #9399B2;"> ] ;</span><span style="color: #CBA6F7;"> then</span></span>
+<span class="giallo-l"><span>    PATH</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;</span><span>$HOME</span><span style="color: #A6E3A1;">/.local/bin:</span><span>$PATH</span><span style="color: #A6E3A1;">&quot;</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">fi</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">alias</span><span> dockps</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&#39;docker ps --format &quot;{{.ID}}  {{.Names}}&quot;&#39;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">docksh</span><span style="color: #9399B2;">() {</span><span style="color: #89B4FA;font-style: italic;"> docker</span><span style="color: #A6E3A1;"> exec -it</span><span style="color: #EBA0AC;font-style: italic;"> $1 $2</span><span style="color: #9399B2;">; }</span></span></code></pre><h3 id="5-4-docker-va-distrobox">5.4. Docker và Distrobox</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Gỡ các package xung đột</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">for</span><span> pkg</span><span style="color: #CBA6F7;"> in</span><span style="color: #A6E3A1;"> docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc</span><span style="color: #9399B2;">;</span><span style="color: #CBA6F7;"> do</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">  sudo</span><span style="color: #A6E3A1;"> apt-get remove</span><span> $pkg</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">done</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Cài Docker</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt-get install ca-certificates curl</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> install -m</span><span style="color: #FAB387;"> 0755</span><span style="color: #A6E3A1;"> -d /etc/apt/keyrings</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> chmod a+r /etc/apt/keyrings/docker.asc</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #F5C2E7;"> \</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &quot;deb [arch=</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">dpkg</span><span style="color: #A6E3A1;"> --print-architecture</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu </span><span style="color: #F5C2E7;">\</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  $(</span><span style="color: #F38BA8;font-style: italic;">.</span><span style="color: #A6E3A1;"> /etc/os-release</span><span style="color: #9399B2;"> &amp;&amp;</span><span style="color: #F38BA8;font-style: italic;"> echo</span><span style="color: #A6E3A1;"> &quot;</span><span>${UBUNTU_CODENAME</span><span style="color: #94E2D5;">:-</span><span>$VERSION_CODENAME}</span><span style="color: #A6E3A1;">&quot;</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;"> stable&quot;</span><span style="color: #94E2D5;"> |</span><span style="color: #F5C2E7;"> \</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">  sudo</span><span style="color: #A6E3A1;"> tee /etc/apt/sources.list.d/docker.list</span><span style="color: #94E2D5;"> &gt;</span><span style="color: #A6E3A1;"> /dev/null</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt update</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span></span></code></pre>
+<p>Distrobox và Kali Linux:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">curl</span><span style="color: #A6E3A1;"> -s https://raw.githubusercontent.com/89luca89/distrobox/main/install</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> sudo</span><span style="color: #A6E3A1;"> sh</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">distrobox</span><span style="color: #A6E3A1;"> create --name kali --image docker.io/kalilinux/kali-rolling:latest</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">distrobox</span><span style="color: #A6E3A1;"> enter kali</span></span></code></pre><h3 id="5-5-toi-uu-pin-laptop">5.5. Tối ưu pin laptop</h3>
+<p><strong>Powertop:</strong></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> apt install powertop</span></span></code></pre>
+<p>Tạo <code>/etc/systemd/system/powertop.service</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="ini"><span class="giallo-l"><span style="color: #9399B2;">[</span><span style="color: #F9E2AF;">Unit</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">Description</span><span style="color: #94E2D5;">=</span><span>Powertop tunings</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span style="color: #F9E2AF;">Service</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">Type</span><span style="color: #94E2D5;">=</span><span>oneshot</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">RemainAfterExit</span><span style="color: #94E2D5;">=</span><span>yes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">ExecStart</span><span style="color: #94E2D5;">=</span><span>/usr/sbin/powertop --auto-tune</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">ExecStartPost</span><span style="color: #94E2D5;">=</span><span>/bin/sh -c </span><span style="color: #A6E3A1;">&#39;for f in $(grep -l &quot;Mouse&quot; /sys/bus/usb/devices/*/product | sed &quot;s/product/power</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">/control/&quot;); do echo on &gt;| &quot;$f&quot;; done&#39;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span style="color: #F9E2AF;">Install</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">WantedBy</span><span style="color: #94E2D5;">=</span><span>multi-user.target</span></span></code></pre>
+<p><strong>Auto-CPU-freq:</strong></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/AdnanHodzic/auto-cpufreq.git</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> auto-cpufreq</span><span style="color: #9399B2;"> &amp;&amp;</span><span style="color: #89B4FA;font-style: italic;"> sudo</span><span style="color: #A6E3A1;"> ./auto-cpufreq-installer</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sudo</span><span style="color: #A6E3A1;"> auto-cpufreq-gtk</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;eval &quot;$(_AUTO_CPUFREQ_COMPLETE=zsh_source auto-cpufreq)&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> ~/.zshrc</span></span></code></pre>
+        </section><form method="post" action="https://vhiweeypifbwacashxjz.supabase.co/rest/v1/rpc/increment_hits?apikey=sb_publishable_EoB7MFJhCmb6PiAk-GPJ4w_PGhQ44Ru" class="iine-form">
+  <input type="hidden" name="page_slug" value="&#x2F;blog&#x2F;linux&#x2F;elementary-os-ubuntu-setup&#x2F;">
+  <button class="iine-button" type="submit" data-slug="&#x2F;blog&#x2F;linux&#x2F;elementary-os-ubuntu-setup&#x2F;" data-icon="thumbs_up"
+    aria-label="Thích bài này" title="Thích bài này">👍</button>
+</form>
+
+                
+                
+                    
+                        
+                        
+                        
+                    
+                    
+                        
+                        
+                        
+                    
+                
+                
+            <nav class="full-width article-navigation">
+                <div><a href="https://thanhnc.id.vn/blog/ctf/thm-light/" aria-label="Tiếp" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;Tiếp</a>
+                <p aria-hidden="true" id="left_title">TryHackMe: Light</p></div>
+                <div><a href="https://thanhnc.id.vn/blog/linux/fydeos-arch-linux/" aria-label="Trước" aria-describedby="right_title">Trước&nbsp;<span class="arrow">→</span></a>
+                <p aria-hidden="true" id="right_title">FydeOS kết hợp Arch Linux</p></div>
+            </nav>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="JakeClark-chan&#x2F;zola-my-id-vn"
+    data-repo-id="R_kgDORXqQpA"
+    data-category="General"
+    data-category-id="DIC_kwDORXqQpM4C3Rqg"
+    
+        data-mapping="pathname"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="top"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="vi"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://thanhnc.id.vn/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="Ẩn&#x2F;hiện Mục lục">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#1-truoc-khi-cai">1. Trước khi cài</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#2-cai-dat">2. Cài đặt</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#2-1-ubuntu-server">2.1. Ubuntu Server</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#2-2-elementary-os-ppa">2.2. Elementary OS PPA</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-sau-cai-dat-cai-dat-he-thong">3. Sau cài đặt — Cài đặt hệ thống</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-1-mang">3.1. Mạng</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-2-cu-chi-da-cham-multi-touch-gesture">3.2. Cử chỉ đa chạm (Multi-touch gesture)</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-3-tat-service-cho-mang">3.3. Tắt service chờ mạng</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-4-pantheon-tweak">3.4. Pantheon-tweak</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-5-ibus-va-go-tieng-viet">3.5. IBus và gõ tiếng Việt</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#3-6-driver-nvidia-tuy-chon">3.6. Driver Nvidia (tuỳ chọn)</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-sau-cai-dat-he-thong">4. Sau cài đặt — Hệ thống</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-1-toi-uu-ssd">4.1. Tối ưu SSD</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-2-tang-swapfile">4.2. Tăng swapfile</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#4-3-dong-bo-dong-ho-cho-dual-boot-windows">4.3. Đồng bộ đồng hồ cho dual-boot Windows</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-sau-cai-dat-ung-dung">5. Sau cài đặt — Ứng dụng</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-1-pacstall">5.1. Pacstall</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-2-python-virtualenv-uv-astral">5.2. Python virtualenv — uv (Astral)</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-3-oh-my-zsh">5.3. oh-my-zsh</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-4-docker-va-distrobox">5.4. Docker và Distrobox</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://thanhnc.id.vn/blog/linux/elementary-os-ubuntu-setup/#5-5-toi-uu-pin-laptop">5.5. Tối ưu pin laptop</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Tới bình luận">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Lên đầu trang">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Đã chép!
+    </span>
+    <span id="copy-init" class="hidden">
+        Sao chép code
+    </span>
+    <script defer src="https://thanhnc.id.vn/js/copyCodeToClipboard.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://thanhnc.id.vn/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://thanhnc.id.vn/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="mailto:contact@thanhnc.id.vn">
+                                    <img loading="lazy" alt="email" title="email" src="https://thanhnc.id.vn/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://github.com/JakeClark-chan">
+                                    <img loading="lazy" alt="github" title="github" src="https://thanhnc.id.vn/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://www.linkedin.com/in/ngchithanh">
+                                    <img loading="lazy" alt="linkedin" title="linkedin" src="https://thanhnc.id.vn/social_icons/linkedin.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://facebook.com/nguyenchithanh21">
+                                    <img loading="lazy" alt="facebook" title="facebook" src="https://thanhnc.id.vn/social_icons/facebook.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://t.me/jakeclark38a">
+                                    <img loading="lazy" alt="telegram" title="telegram" src="https://thanhnc.id.vn/social_icons/telegram.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;projects&#x2F;">
+                                dự án
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;blog&#x2F;">
+                                blog
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;thanhnc.id.vn&#x2F;faq&#x2F;">
+                                faq
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Được xây dựng bằng
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                </small>
+        </div>
+    </section>
+
+    </footer>
+
+
+    
+    
+</body>
+
+</html>

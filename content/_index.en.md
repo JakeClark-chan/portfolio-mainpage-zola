@@ -4,7 +4,7 @@ description = "Personal portfolio of JakeClark about Linux, CTF, and AI."
 
 [extra]
 header = {title = "Hello, I'm JakeClark", img = "kanade-icon.jpg", img_alt = "JakeClark", description = "Aspiring AI & Security Engineer | Building Secure AI Agents & Automations | UIT"}
-section_path = "linux/_index.en.md"
+section_path = "blog/_index.en.md"
 max_posts = 4
 projects_path = "projects/_index.en.md"
 max_projects = 3
@@ -54,6 +54,6 @@ Me inside the UIT Data Science Challenge (DSC) closing ceremony.
 
 ## Explore more
 - **[Projects](/en/projects/)** — My coding and research projects
-- **[Linux](/en/linux/)** — Linux guides and experiences
-- **[CTF](/en/ctf/)** — CTF write-ups and solutions
+- **[Linux](/en/blog/linux/)** — Linux guides and experiences
+- **[CTF](/en/blog/ctf/)** — CTF write-ups and solutions
 - **[FAQ](/en/faq/)** — Frequently Asked Questions
