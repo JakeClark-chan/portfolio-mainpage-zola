@@ -53,6 +53,13 @@ footer_menu = [
     { name = "faq", url = "faq" },
 ]
 
+allowed_domains = [
+    { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
+    { directive = "frame-src", domains = ["giscus.app"] },
+    { directive = "script-src", domains = ["'self'", "static.cloudflareinsights.com"] },
+    { directive = "connect-src", domains = ["cloudflareinsights.com"] },
+]
+
 [extra.giscus]
 enabled_for_all_posts = true
 automatic_loading = true

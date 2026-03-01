@@ -13,10 +13,21 @@
     {{ throw(message="ERROR: The image path for the header should not contain '$BASE_URL'. Please remove it and use the
     proper image path.") }}
     {%- else -%}
-    {%- set image_path = get_url(path=header.img, trailing_slash=false) | safe -%}
+    {%- set img_avif = resize_image(path=header.img, width=256, height=256, op="fill", format="avif", quality=75) -%}
+    {%- set img_webp = resize_image(path=header.img, width=256, height=256, op="fill", format="webp", quality=80) -%}
+    {%- set img_jpg  = resize_image(path=header.img, width=256, height=256, op="fill", format="jpg",  quality=85) -%}
     {%- endif -%}
     <div id="image-container-home">
-        <img alt="{{ header.img_alt | default(value=" the owner") }}" id="banner-home-img" src="{{ image_path }}" />
+        <picture>
+            <source srcset="{{ img_avif.url }}" type="image/avif">
+            <source srcset="{{ img_webp.url }}" type="image/webp">
+            <img alt="{{ header.img_alt | default(value=" the owner") }}"
+                 id="banner-home-img"
+                 src="{{ img_jpg.url }}"
+                 width="{{ img_jpg.width }}"
+                 height="{{ img_jpg.height }}"
+                 fetchpriority="high" />
+        </picture>
     </div>
     {%- endif -%}
 </div>
