@@ -55,6 +55,8 @@ footer_menu = [
 
 allowed_domains = [
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
+    { directive = "img-src", domains = ["'self'", "data:"] },
+    { directive = "font-src", domains = ["'self'", "data:"] },
     { directive = "frame-src", domains = ["giscus.app"] },
     { directive = "script-src", domains = ["'self'", "static.cloudflareinsights.com"] },
     { directive = "connect-src", domains = ["cloudflareinsights.com"] },
