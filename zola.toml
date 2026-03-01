@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://thanhnc.id.vn"
 
-title = "JakeClark - Nguyễn Chí Thành"
+title = "JakeClark - Portfolio & Blog cá nhân"
 default_language = "vi"
 theme = "tabi"
 
@@ -12,7 +12,7 @@ generate_feeds = true
 taxonomies = [{ name = "tags", feed = true }]
 
 [languages.en]
-title = "JakeClark - Nguyễn Chí Thành"
+title = "JakeClark - Personal Portfolio & Blog"
 taxonomies = [{ name = "tags", feed = true }]
 build_search_index = false
 generate_feeds = true
