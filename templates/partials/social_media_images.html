@@ -1,0 +1,37 @@
+{#- Dynamic OG social media card via og-image-worker -#}
+{#- Constructs URL from page metadata pointing to the OG image worker -#}
+
+{%- set og_base = config.extra.og_image_url | default(value="https://og.thanhnc.id.vn") -%}
+
+{%- if page -%}
+{%- set og_title = page.title | default(value=config.title) | urlencode -%}
+{%- set og_description = page.description | default(value="") | urlencode -%}
+{%- set og_date = page.date | default(value="") -%}
+{%- if page.taxonomies.tags -%}
+{%- set og_tags = page.taxonomies.tags | join(sep=",") | urlencode -%}
+{%- else -%}
+{%- set og_tags = "" -%}
+{%- endif -%}
+{%- elif section -%}
+{%- set og_title = section.title | default(value=config.title) | urlencode -%}
+{%- set og_description = section.description | default(value="") | urlencode -%}
+{%- set og_date = "" -%}
+{%- set og_tags = "" -%}
+{%- else -%}
+{%- set og_title = config.title | urlencode -%}
+{%- set og_description = config.description | default(value="") | urlencode -%}
+{%- set og_date = "" -%}
+{%- set og_tags = "" -%}
+{%- endif -%}
+
+{%- set og_author = "JakeClark" -%}
+
+{#- Build the OG image URL -#}
+{%- set og_url = og_base ~ "/og?title=" ~ og_title ~ "&description=" ~ og_description ~ "&author=" ~ og_author ~
+"&date=" ~ og_date ~ "&tags=" ~ og_tags ~ "&theme=dark" -%}
+
+<meta property="og:image" content="{{ og_url | safe }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="{{ og_url | safe }}" />
+<meta name="twitter:card" content="summary_large_image" />

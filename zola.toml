@@ -1,6 +1,9 @@
+# You may want to disable Bot Fighting Mode inside Cloudflare Dashboard to improve SEO
+
 # The URL the site will be built for
 base_url = "https://thanhnc.id.vn"
 
+# Title for all the site - all pages will have this title
 title = "JakeClark - Portfolio & Blog cá nhân"
 default_language = "vi"
 theme = "tabi"
@@ -21,21 +24,23 @@ generate_feeds = true
 theme = "catppuccin-mocha"
 
 [extra]
-base_canonical_url = "https://thanhnc.id.vn"
-skin = "mint"
-stylesheets = ["custom.css"]
-theme_switcher = true
-default_theme = ""
-browser_theme_color = "#087e96"
-compact_tags = true
-favicon_emoji = "🛠️"
+base_canonical_url = "https://thanhnc.id.vn" # Base canonical URL for all pages
+og_image_url = "https://og.thanhnc.id.vn" # OG social media card image generator worker
+skin = "mint" # Dark green
+stylesheets = ["custom.css"] # Custom CSS file
+theme_switcher = true # Enable theme switcher
+default_theme = "" # Default theme
+browser_theme_color = "#087e96" # Browser theme color
+compact_tags = true # Compact tags
+favicon_emoji = "🛠️" # Favicon emoji
 
 # Blog features (merged from blog repo)
-iine = true
-iine_icon = "thumbs_up"
-show_previous_next_article_links = true
-quick_navigation_buttons = true
+iine = true # Enable iine feature - an anonymous like button
+iine_icon = "thumbs_up" # Iine icon
+show_previous_next_article_links = true # Show previous/next article links
+quick_navigation_buttons = true # Quick navigation buttons
 
+# Social link which will be put in the footer
 socials = [
     { name = "email", url = "mailto:contact@thanhnc.id.vn", icon = "email" },
     { name = "github", url = "https://github.com/JakeClark-chan", icon = "github" },
@@ -43,26 +48,31 @@ socials = [
     { name = "facebook", url = "https://facebook.com/nguyenchithanh21", icon = "facebook" },
     { name = "telegram", url = "https://t.me/jakeclark38a", icon = "telegram" },
 ]
+# Menu which will be put in the header
 menu = [
     { name = "projects", url = "projects" },
     { name = "blog", url = "blog" },
     { name = "faq", url = "faq" },
 ]
+# Footer menu
 footer_menu = [
     { name = "projects", url = "projects" },
     { name = "blog", url = "blog" },
     { name = "faq", url = "faq" },
 ]
 
+# Allowed domain, to decrease Content-Security-Policy
 allowed_domains = [
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
-    { directive = "img-src", domains = ["'self'", "data:"] },
+    { directive = "img-src", domains = ["'self'", "data:", "og.thanhnc.id.vn"] },
     { directive = "font-src", domains = ["'self'", "data:"] },
     { directive = "frame-src", domains = ["giscus.app"] },
     { directive = "script-src", domains = ["'self'", "static.cloudflareinsights.com"] },
     { directive = "connect-src", domains = ["cloudflareinsights.com"] },
 ]
 
+# Giscus, a comment system that will use GitHub Discussion
+# Go to https://giscus.app to setup repo_id and category_id
 [extra.giscus]
 enabled_for_all_posts = true
 automatic_loading = true
