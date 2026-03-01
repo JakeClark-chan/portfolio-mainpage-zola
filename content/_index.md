@@ -1,6 +1,6 @@
 +++
-title = "Trang chủ"
-description = "Hồ sơ của JakeClark về Linux, CTF, và bầu trời AI."
+title = "JakeClark - Portfolio & Blog cá nhân"
+description = "Hồ sơ cá nhân của JakeClark (Nguyễn Chí Thành) — sinh viên ATTT tại UIT, đam mê AI, bảo mật, và Linux."
 
 [extra]
 header = {title = "Hé lô, tui là JakeClark 😎", img = "kanade-icon.jpg", img_alt = "JakeClark", description = "Aspiring AI & Security Engineer | Building Secure AI Agents & Automations | UIT"}
@@ -17,7 +17,7 @@ Tên cha sinh mẹ đẻ: Nguyễn Chí Thành
 - Tui có đam mê mãnh liệt mổ xẻ mấy cái issue khó nhằn hiện nay, nhất là mấy lổ hổng ATTT, và mượn "tay" sức mạnh dời non lấp bể của AI để vả lại tụi nó.
 - Châm ngôn sống: Khai phá maximum tiềm năng bản thân trong lĩnh vực ATTT, AI và xa hơn nữa để không bao giờ bị đuối trong cái thế giới công nghệ nhảy trend từng giây.
 
-# Hành trang của tui (Experiences)
+## Hành trang của tui (Experiences)
 
 **Code dạo (Programming)**
 - Ngôn ngữ: Múa rành Python với C/C++; biết sương sương JavaScript, C# và PHP.
@@ -41,7 +41,7 @@ Tên cha sinh mẹ đẻ: Nguyễn Chí Thành
 - Infra (IaC): Múa được Ansible.
 - CI/CD: Jenkins tới bến luôn.
 
-# Góc Flexing bản thân 📸
+## Góc Flexing bản thân 📸
 
 {{ optimized_img(src="jakeclark-with-duy-luan-720p.jpg", alt="Me with Duy Luan") }}
 Tui (JakeClark) chụp ké với anh Luân siêu ngầu [@duyluandethuong](https://www.youtube.com/@duyluandethuong)

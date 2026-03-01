@@ -1,6 +1,6 @@
 +++
-title = "Home"
-description = "Personal portfolio of JakeClark about Linux, CTF, and AI."
+title = "JakeClark - Personal Portfolio & Blog"
+description = "Personal portfolio of JakeClark (Nguyễn Chí Thành) — InfoSec student at UIT, passionate about AI, cybersecurity, and Linux."
 
 [extra]
 header = {title = "Hello, I'm JakeClark", img = "kanade-icon.jpg", img_alt = "JakeClark", description = "Aspiring AI & Security Engineer | Building Secure AI Agents & Automations | UIT"}

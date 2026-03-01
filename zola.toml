@@ -21,6 +21,7 @@ generate_feeds = true
 theme = "catppuccin-mocha"
 
 [extra]
+base_canonical_url = "https://thanhnc.id.vn"
 skin = "mint"
 stylesheets = ["custom.css"]
 theme_switcher = true
