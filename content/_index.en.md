@@ -4,6 +4,11 @@ description = "Personal portfolio of JakeClark about Linux, CTF, and AI."
 
 [extra]
 header = {title = "Hello, I'm JakeClark", img = "kanade-icon.jpg", img_alt = "JakeClark", description = "Aspiring AI & Security Engineer | Building Secure AI Agents & Automations | UIT"}
+section_path = "linux/_index.en.md"
+max_posts = 4
+projects_path = "projects/_index.en.md"
+max_projects = 3
+show_projects_first = true
 +++
 
 Real name: Nguyễn Chí Thành
@@ -47,6 +52,8 @@ Me inside the UIT Data Science Challenge (DSC) closing ceremony.
 
 ---
 
-## 🚀 Personal Info
-- **[Projects](https://thanhnc.id.vn/en/projects/)** — My coding and research projects
-- **[FAQ](https://thanhnc.id.vn/en/faq/)** — Frequently Asked Questions
+## Explore more
+- **[Projects](/en/projects/)** — My coding and research projects
+- **[Linux](/en/linux/)** — Linux guides and experiences
+- **[CTF](/en/ctf/)** — CTF write-ups and solutions
+- **[FAQ](/en/faq/)** — Frequently Asked Questions

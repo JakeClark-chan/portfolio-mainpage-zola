@@ -28,8 +28,15 @@ default_theme = ""
 browser_theme_color = "#087e96"
 compact_tags = true
 favicon_emoji = "🛠️"
+
+# Blog features (merged from blog repo)
+iine = true
+iine_icon = "thumbs_up"
+show_previous_next_article_links = true
+quick_navigation_buttons = true
+
 socials = [
-    { name = "email", url = "mailto:nguyenchithanh210904@gmail.com", icon = "email" },
+    { name = "email", url = "mailto:contact@thanhnc.id.vn", icon = "email" },
     { name = "github", url = "https://github.com/JakeClark-chan", icon = "github" },
     { name = "linkedin", url = "https://www.linkedin.com/in/ngchithanh", icon = "linkedin" },
     { name = "facebook", url = "https://facebook.com/nguyenchithanh21", icon = "facebook" },
@@ -37,11 +44,29 @@ socials = [
 ]
 menu = [
     { name = "projects", url = "projects" },
+    { name = "linux", url = "linux" },
+    { name = "ctf", url = "ctf" },
     { name = "faq", url = "faq" },
-    { name = "blog", url = "https://blog.thanhnc.id.vn" },
 ]
 footer_menu = [
     { name = "projects", url = "projects" },
+    { name = "linux", url = "linux" },
+    { name = "ctf", url = "ctf" },
     { name = "faq", url = "faq" },
-    { name = "blog", url = "https://blog.thanhnc.id.vn" },
 ]
+
+[extra.giscus]
+enabled_for_all_posts = true
+automatic_loading = true
+repo = "JakeClark-chan/zola-my-id-vn"
+repo_id = "R_kgDORXqQpA"
+category = "General"
+category_id = "DIC_kwDORXqQpM4C3Rqg"
+mapping = "pathname"
+strict_title_matching = 1
+enable_reactions = 1
+comment_box_above_comments = true
+light_theme = "noborder_light"
+dark_theme = "noborder_dark"
+lang = ""
+lazy_loading = true

@@ -4,6 +4,11 @@ description = "Hồ sơ của JakeClark về Linux, CTF, và bầu trời AI."
 
 [extra]
 header = {title = "Hé lô, tui là JakeClark 😎", img = "kanade-icon.jpg", img_alt = "JakeClark", description = "Aspiring AI & Security Engineer | Building Secure AI Agents & Automations | UIT"}
+section_path = "linux/_index.md"
+max_posts = 4
+projects_path = "projects/_index.md"
+max_projects = 3
+show_projects_first = true
 +++
 
 Tên cha sinh mẹ đẻ: Nguyễn Chí Thành
@@ -46,6 +51,8 @@ Tui đi tham gia Lễ bế mạc UIT Data Science Challenge (DSC) nè.
 
 ---
 
-## 🚀 Thông tin cá nhân
-- **[Projects](https://thanhnc.id.vn/projects/)** — Mấy cái project tui code dạo.
-- **[FAQ](https://thanhnc.id.vn/faq/)** — Hỏi xoáy đáp xoay về tui.
+## Khám phá thêm
+- **[Projects](/projects/)** — Mấy cái project tui code dạo.
+- **[Linux](/linux/)** — Hướng dẫn và chia sẻ về Linux.
+- **[CTF](/ctf/)** — Write-ups và hướng dẫn giải CTF.
+- **[FAQ](/faq/)** — Hỏi xoáy đáp xoay về tui.
