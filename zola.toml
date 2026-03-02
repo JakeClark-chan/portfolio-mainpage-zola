@@ -78,10 +78,10 @@ allowed_domains = [
 [extra.giscus]
 enabled_for_all_posts = true
 automatic_loading = true
-repo = "JakeClark-chan/zola-my-id-vn"
-repo_id = "R_kgDORXqQpA"
+repo = "JakeClark-chan/portfolio-mainpage-zola"
+repo_id = "R_kgDORaDy3w"
 category = "General"
-category_id = "DIC_kwDORXqQpM4C3Rqg"
+category_id = "DIC_kwDORaDy384C3hrD"
 mapping = "pathname"
 strict_title_matching = 1
 enable_reactions = 1
