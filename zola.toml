@@ -50,15 +50,17 @@ socials = [
 ]
 # Menu which will be put in the header
 menu = [
-    { name = "projects", url = "projects" },
-    { name = "blog", url = "blog" },
-    { name = "faq", url = "faq" },
+    { name = "Projects", url = "projects" },
+    { name = "FAQ", url = "faq" },
+    { name = "Blog", url = "blog" },
 ]
 # Footer menu
 footer_menu = [
-    { name = "projects", url = "projects" },
-    { name = "blog", url = "blog" },
-    { name = "faq", url = "faq" },
+    { name = "Projects", url = "projects" },
+    { name = "FAQ", url = "faq" },
+    { name = "Linux", url = "blog/linux" },
+    { name = "CTF", url = "blog/ctf" },
+    { name = "Story", url = "blog/story" },
 ]
 
 # Allowed domain, to decrease Content-Security-Policy
