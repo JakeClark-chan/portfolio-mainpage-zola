@@ -1,0 +1,18 @@
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    <div style="flex: 1 1 45%; min-width: 300px; display: flex; flex-direction: column; align-items: center;">
+        <figure style="text-align: center; display: block; margin: 0;">
+            <img src="{{ src1 }}" alt="{{ alt1 | default(value=caption1) | default(value="") }}">
+            {% if caption1 %}
+            <figcaption><em>{{ caption1 }}</em></figcaption>
+            {% endif %}
+        </figure>
+    </div>
+    <div style="flex: 1 1 45%; min-width: 300px; display: flex; flex-direction: column; align-items: center;">
+        <figure style="text-align: center; display: block; margin: 0;">
+            <img src="{{ src2 }}" alt="{{ alt2 | default(value=caption2) | default(value="") }}">
+            {% if caption2 %}
+            <figcaption><em>{{ caption2 }}</em></figcaption>
+            {% endif %}
+        </figure>
+    </div>
+</div>

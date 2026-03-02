@@ -1,0 +1,6 @@
+<figure style="text-align: center; display: block;">
+    <img src="{{ src }}" alt="{{ alt | default(value=caption) | default(value="") }}">
+    {% if caption %}
+    <figcaption><em>{{ caption }}</em></figcaption>
+    {% endif %}
+</figure>

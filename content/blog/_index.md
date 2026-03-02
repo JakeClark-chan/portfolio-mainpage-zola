@@ -11,3 +11,4 @@ Chào mừng đến với trang blog của tui. Ở đây tui viết về mấy 
 
 - **[Linux](/blog/linux/)** — Hướng dẫn cài cắm, cấu hình và chia sẻ kinh nghiệm với Linux.
 - **[CTF](/blog/ctf/)** — Write-ups giải các thử thách Capture The Flag.
+- **[Story](/blog/story/)** — Những câu chuyện và chia sẻ cá nhân.
